@@ -26,14 +26,27 @@ pipenv shell
 
 ## Instalar dependencias
 ```shell
-pipenv install flask flask-sqlalchemy python-dotenv psycopg2-binary
+pipenv install flask flask-sqlalchemy python-dotenv psycopg2-binary flask-migrate flask-cors
+```
+## Inicializar db (Crear Carpeta migrations)
+```shell
+flask db init 
 ```
 
-pipenv install flask-migrate flask-cors
-flask db init # Crear Carpeta migrations
-flask db migrate # Crear version de tablas
-flask db upgrade # Subir a BD
+## Crear nueva version de tablas
+```shell
+flask db migrate
+```
 
+## Subir nueva versión a BD
+```shell
+flask db upgrade
+```
+
+## Iniciar aplicación
+```shell
 python app.py
+```
 
+## Puerto para correr
 http://127.0.0.1:5000/
